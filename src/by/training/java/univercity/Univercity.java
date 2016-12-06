@@ -18,6 +18,9 @@ public class Univercity {
 
         commetie.deleteAllGroups();
 
-        //commetie.sayHello(); <--- compilation failed
+        //commetie.sayHello(); // <--- compilation failed
+        SelectionCommitie commitie2 = new SelectionCommitie();
+        commitie2.sayHello();
+
     }
 }
