@@ -4,9 +4,11 @@ import by.training.java.univercity.commitie.SelectionCommitie;
 import by.training.java.univercity.interfaces.Reception;
 import by.training.java.univercity.speciality.Group;
 import by.training.java.univercity.speciality.Speciality;
+import by.training.java.univercity.speciality.Student;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Yermalovich_K on 06/12/2016.
@@ -29,6 +31,8 @@ public class Univercity {
         //commetie.sayHello(); // <--- compilation failed
         //SelectionCommitie commitie2 = new SelectionCommitie();
         //commitie2.sayHello(); <--- OK
+
+        List<Student> students;
 
     }
 
@@ -66,7 +70,7 @@ public class Univercity {
 
             }
             */
-            value = i % 3;
+            value = random(i, 3);
 
             speciality = new Speciality(Speciality.Specialities.values()[value]);
 
@@ -106,5 +110,39 @@ public class Univercity {
 
             //trace info about null value
         }
+    }
+
+    /*
+    *
+    * generate Student list randomly
+    *
+     */
+    public static LinkedList<Student> generateStudentsUtility(int amount) {
+
+        LinkedList<Student> students = new LinkedList<Student>();
+
+        for (int i = 0; i < amount; i++) {
+
+        }
+
+        return students;
+    }
+
+    /*
+    *
+    * returns random value in range between min and max
+    *
+     */
+    public static int random(int value, int max) {
+
+        // need to implement some random() function!
+        /*
+        Random rand = new Random();
+        max = (max % 3) + 1;
+        int random = rand.nextInt(max) + min;
+        return random;
+        */
+
+        return value % max;
     }
 }
