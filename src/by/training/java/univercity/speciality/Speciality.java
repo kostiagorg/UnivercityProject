@@ -7,51 +7,53 @@ package by.training.java.univercity.speciality;
  */
 public class Speciality {
 
-    private String specialityName;
+    private String name;
+    private String description;
+
     private int numberFloor;
-    private String specialityDescription;
 
-    public static final String MATH = "Mathematics";
-    public static final String PHYS = "Physics";
-    public static final String LANG = "English";
-
-    public Speciality() {
-        setSpeciality(0, MATH);
+    public enum Specialities {
+        MATH, PHYS, LANG
     }
 
-    public Speciality(int numberFloor) {
+    public Speciality() {
 
-        switch (numberFloor) {
-            case 0:
-                setSpeciality(0, MATH);
+        setSpeciality(0, "Mathematics");
+    }
+
+    public Speciality(Specialities speciality) {
+
+        switch (speciality) {
+            case MATH:
+                setSpeciality(0, "Mathematics");
                 break;
-            case 1:
-                setSpeciality(1, PHYS);
+            case PHYS:
+                setSpeciality(1, "Physics");
                 break;
 
-            case 2:
-                setSpeciality(2, LANG);
+            case LANG:
+                setSpeciality(2, "English");
                 break;
 
             default:
+                setSpeciality(0, "Mathematics");
         }
     }
 
     private void setSpeciality(int numberFloor, String specialityName) {
 
-        if (numberFloor < 0) this.numberFloor = 0;
-        else this.numberFloor = numberFloor;
-
-        this.specialityName = new String(specialityName);
+        this.numberFloor = numberFloor;
+        this.name = specialityName;
     }
 
     public String getSpecialityDescription() {
 
-        specialityDescription =
-                new String("Speciality : " + this.specialityName +
-                ", floor number : " + this.numberFloor);
+        this.description = "Speciality : " +
+                           this.name +
+                           ", floor number : " +
+                           this.numberFloor;
 
-        return specialityDescription;
+        return this.description;
     }
 
     public void showSpecialityDescription() {

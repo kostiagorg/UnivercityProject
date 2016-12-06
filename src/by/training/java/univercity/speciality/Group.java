@@ -17,14 +17,17 @@ public class Group {
 
     public Group() {
 
-        //set default group name
+        /* set default group number */
         this.groupNumber = 0;
     }
 
-    public Group(int groupNumber, Speciality specialtiy) {
+    public Group(int groupNumber, Speciality specialty) {
+
+        //set into default value in case of some issues
+        if (groupNumber < 1) groupNumber = 0;
 
         setGroupNumber(groupNumber);
-        setSpeciality(specialtiy);
+        setSpeciality(specialty);
     }
 
     public int getGroupNumber() {
@@ -32,12 +35,8 @@ public class Group {
     }
 
     public void setGroupNumber(int groupNumber) {
-        if (groupNumber < 1) {
 
-            this.groupNumber = 0;
-        } else {
-            this.groupNumber = groupNumber;
-        }
+        this.groupNumber = groupNumber;
     }
 
     public void setSpeciality(Speciality speciality) {

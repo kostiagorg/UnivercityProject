@@ -21,35 +21,23 @@ public class SelectionCommitie implements Reception {
 
     @Override
     /*
-
-    Generate necessary amount of groups randomly
-
+    *
+    * just stub !!!
+    *
      */
     public Group generateGroups(int amount) {
-
-        for (int i = 0; i < amount; i++) {
-            groups.add(new Group(i, new Speciality(i % 3)));
-        }
 
         return null;
     }
 
     @Override
     /*
-
-    Show infrmation about all exisint Groups
-
+    *
+    * just stub !
+    *
     */
     public void showGroups() {
 
-        String specialityDescription;
-
-        for (int i = 0; i < this.groups.size(); i++) {
-
-            specialityDescription = groups.get(i).getSpeciality().getSpecialityDescription();
-            System.out.println("Group number : " + groups.get(i).getGroupNumber() + ", " +
-            specialityDescription);
-        }
     }
 
     @Override
