@@ -69,4 +69,16 @@ public class SelectionCommitie implements Reception {
 
         if (null != this.groups) this.groups.clear();
     }
+
+    /*
+    *
+    *  just to check the following case :
+    *  Reception commitie = new SelectionCommitie();
+    *  commitie.sayHello();
+    *
+    *
+     */
+    public void sayHello() {
+        System.out.println("Hello!!!");
+    }
 }

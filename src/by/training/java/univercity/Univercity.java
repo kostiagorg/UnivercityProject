@@ -17,5 +17,7 @@ public class Univercity {
         commetie.showGroups();
 
         commetie.deleteAllGroups();
+
+        //commetie.sayHello(); <--- compilation failed
     }
 }
