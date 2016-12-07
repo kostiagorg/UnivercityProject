@@ -32,7 +32,9 @@ public class Univercity {
         //SelectionCommitie commitie2 = new SelectionCommitie();
         //commitie2.sayHello(); <--- OK
 
-        List<Student> students;
+        List<Student> students = generateStudentsUtility(1000);
+
+        showStudentsUtility(students);
 
     }
 
@@ -121,11 +123,53 @@ public class Univercity {
 
         LinkedList<Student> students = new LinkedList<Student>();
 
+        int countSurname = 10;
+        int countStreet = 10;
+
+        int cSurname;
+        int cStreet;
+
+        boolean isGovernment = false;
+
+        String name;
+
         for (int i = 0; i < amount; i++) {
 
+            isGovernment = false;
+
+            name = "Student" + Integer.toString(i);
+            cSurname = random(i, countSurname);
+            cStreet = random(i, countStreet);
+
+            if ((i % 2) == 1) isGovernment = true;
+
+            students.add(new Student(name,
+                                    Student.Names.values()[cSurname],
+                                    Student.Streets.values()[cStreet],
+                                    isGovernment,
+                                    null,           //default birthday
+                                    0));            //default group number
         }
 
         return students;
+    }
+
+    /*
+    *
+    * display detailed information about all existing students
+    *
+     */
+    public static void showStudentsUtility(List<Student> students) {
+
+        System.out.println("All existing students detailed information : ");
+
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(i + ": " + students.get(i).getName() + " " +
+                               students.get(i).getSurname() + ", " +
+                               students.get(i).getAddress() + " str., group: " +
+                               students.get(i).getGroupNumber());
+        }
+
     }
 
     /*

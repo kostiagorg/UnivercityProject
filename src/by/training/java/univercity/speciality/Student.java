@@ -62,6 +62,95 @@ public class Student {
 
     }
 
+    public Student(String name,
+                   Names surname,
+                   Streets street,
+                   boolean isGovernmentFinanced,
+                   Date birth,
+                   int groupNumber) {
+
+        this.name = name;
+        //this.surname = surname;
+        //this.address = address;
+        this.isGovernmentFinanced = isGovernmentFinanced;
+        this.birth = birth;
+        this.groupNumber = groupNumber;
+
+        switch (surname) {
+            case NAME_ONE:
+                this.surname = "Ibrahimovich";
+                break;
+            case NAME_TWO:
+                this.surname = "Maradonna";
+                break;
+            case NAME_THREE:
+                this.surname = "Batistuta";
+                break;
+            case NAME_FOUR:
+                this.surname = "Shevchenko";
+                break;
+            case NAME_FIVE:
+                this.surname = "Rooney";
+                break;
+            case NAME_SIX:
+                this.surname = "Terry";
+                break;
+            case NAME_SEVEN:
+                this.surname = "Gerard";
+                break;
+            case NAME_EIGHT:
+                this.surname = "Lempard";
+                break;
+            case NAME_NINE:
+                this.surname = "Pogba";
+                break;
+            case NAME_TEN:
+                this.surname = "Blind";
+                break;
+
+            default:
+                this.surname = "Ibrahimovich";
+        }
+
+
+        switch (street) {
+            case STREET_ONE:
+                this.address = "Pervomayskaya";
+                break;
+            case STREET_TWO:
+                this.address = "Kalinina";
+                break;
+            case STREET_THREE:
+                this.address = "Vostok";
+                break;
+            case STREET_FOUR:
+                this.address = "Programmistov";
+                break;
+            case STREET_FIVE:
+                this.address = "Uruche";
+                break;
+            case STREET_SIX:
+                this.address = "Geen Field 1";
+                break;
+            case STREET_SEVEN:
+                this.address = "Geen Field 2";
+                break;
+            case STREET_EIGHT:
+                this.address = "Geen Field 3";
+                break;
+            case STREET_NINE:
+                this.address = "Geen Field 4";
+                break;
+            case STREET_TEN:
+                this.address = "Geen Field 5";
+                break;
+
+            default:
+                this.address = "Geen Field 5";
+        }
+
+    }
+
 
     /* Getters and Setters */
     public String getName() {
@@ -94,6 +183,14 @@ public class Student {
 
     public void setGovernmentFinanced(boolean governmentFinanced) {
         isGovernmentFinanced = governmentFinanced;
+    }
+
+    public int getGroupNumber() {
+        return groupNumber;
+    }
+
+    public void setGroupNumber(int groupNumber) {
+        this.groupNumber = groupNumber;
     }
 
 
